@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaa Alif Briyani - Fine Dining & Party Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="transition-all duration-300">
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-ring"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full glass-dark z-50 px-6 py-4 shadow-lg animate-slide-down">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold playfair gold-gradient">Yaa Alif Briyani</h1>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" onclick="showPage('home')" class="nav-link active text-white hover:text-yellow-300">Home</a>
+                <a href="#" onclick="showPage('menu')" class="nav-link text-white hover:text-yellow-300">Menu</a>
+                <a href="#" onclick="showPage('about')" class="nav-link text-white hover:text-yellow-300">About</a>
+                <a href="#" onclick="showPage('party-hall')" class="nav-link text-white hover:text-yellow-300">Party Hall</a>
+                <a href="#" onclick="showPage('contact')" class="nav-link text-white hover:text-yellow-300">Contact</a>
+                <!-- Theme Toggle -->
+                <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+                    <div class="toggle-circle">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </div>
+                </div>
+            </div>
+            <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2 glass-dark rounded-lg p-4">
+            <a href="#" onclick="showPage('home'); toggleMobileMenu()" class="block py-2 text-white hover:text-yellow-300 transition">Home</a>
+            <a href="#" onclick="showPage('menu'); toggleMobileMenu()" class="block py-2 text-white hover:text-yellow-300 transition">Menu</a>
+            <a href="#" onclick="showPage('about'); toggleMobileMenu()" class="block py-2 text-white hover:text-yellow-300 transition">About</a>
+            <a href="#" onclick="showPage('party-hall'); toggleMobileMenu()" class="block py-2 text-white hover:text-yellow-300 transition">Party Hall</a>
+            <a href="#" onclick="showPage('contact'); toggleMobileMenu()" class="block py-2 text-white hover:text-yellow-300 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <section class="hero-bg min-h-screen flex items-center justify-center relative">
+            <div class="text-center px-6 z-10 animate-fade-in">
+                <h2 class="text-5xl md:text-7xl font-bold playfair mb-6 animate-slide-up">
+                    Welcome to <span class="gold-gradient">Yaa Alif Briyani</span>
+                </h2>
+                <p class="text-xl md:text-2xl mb-8 animate-slide-up" style="animation-delay: 0.2s; color: #F4E4C1;">
+                    Where Culinary Excellence Meets Elegance
+                </p>
+                <div class="space-x-4 animate-slide-up" style="animation-delay: 0.4s">
+                    <button onclick="showPage('menu')" class="btn-gold px-8 py-3 rounded-full text-black font-semibold">
+                        Explore Menu
+                    </button>
+                    <button onclick="showPage('party-hall')" class="border-2 border-yellow-300 px-8 py-3 rounded-full hover:bg-yellow-300 hover:text-black transition-all duration-300 hover:scale-105">
+                        Book Party Hall
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center scroll-animate">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-yellow-300 to-orange-400 flex items-center justify-center transform hover:rotate-12 transition-transform duration-300">
+                        <i class="fas fa-utensils text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 playfair">Fine Dining</h3>
+                    <p style="color: #D2B48C;">Experience exquisite flavors crafted by our master chefs</p>
+                </div>
+                <div class="text-center scroll-animate" style="animation-delay: 0.2s">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-yellow-300 to-orange-400 flex items-center justify-center transform hover:rotate-12 transition-transform duration-300">
+                        <i class="fas fa-glass-cheers text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 playfair">Premium party hall </h3>
+                    <p style="color: #D2B48C;">Curated selection of wines and signature cocktails</p>
+                </div>
+                <div class="text-center scroll-animate" style="animation-delay: 0.4s">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-yellow-300 to-orange-400 flex items-center justify-center transform hover:rotate-12 transition-transform duration-300">
+                        <i class="fas fa-music text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 playfair"> birthday function hall </h3>
+                    <p style="color: #D2B48C;">We give affortable price for premium party hall</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Section -->
+        <section class="py-20 px-6" style="background: linear-gradient(to right, #6B4423, #8B4513);">
+            <div class="max-w-7xl mx-auto">
+                <h3 class="text-4xl font-bold text-center mb-12 playfair gold-gradient">Today's Specials</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass rounded-lg p-6 transform hover:scale-105 transition-all duration-300">
+                        <h4 class="text-2xl font-bold mb-3" style="color: #FFB347;">Chef's Selection</h4>
+                        <p class="mb-4" style="color: #F4E4C1;">Pan-seared duck breast with cherry reduction, served with roasted vegetables and truffle mashed potatoes</p>
+                        <p class="text-3xl font-bold" style="color: #FFB347;">$68</p>
+                    </div>
+                    <div class="glass rounded-lg p-6 transform hover:scale-105 transition-all duration-300">
+                        <h4 class="text-2xl font-bold mb-3" style="color: #FFB347;">Special dish of the day</h4>
+                        <p class="mb-4" style="color: #F4E4C1;">2018 Château Margaux - A sublime Bordeaux with notes of black currant and cedar</p>
+                        <p class="text-3xl font-bold" style="color: #FFB347;">$85/glass</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Google Reviews Section -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h3 class="text-4xl font-bold text-center mb-12 playfair gold-gradient">What Our Guests Say</h3>
+                
+                <!-- Reviews Container -->
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="glass rounded-lg p-6 transform hover:scale-105 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-400">5.0</span>
+                        </div>
+                        <p class="mb-4" style="color: #F4E4C1;">"Absolutely incredible dining experience! The wagyu ribeye was cooked to perfection and the service was impeccable."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-r from-yellow-300 to-orange-400 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">JD</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">John Doe</p>
+                                <p class="text-xs" style="color: #D2B48C;">2 weeks ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-lg p-6 transform hover:scale-105 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-400">5.0</span>
+                        </div>
+                        <p class="mb-4" style="color: #F4E4C1;">"The ambiance is unmatched! We celebrated our anniversary here and it was magical. The tasting menu is a must-try!"</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-r from-yellow-300 to-orange-400 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">SM</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Sarah Miller</p>
+                                <p class="text-xs" style="color: #D2B48C;">1 month ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-lg p-6 transform hover:scale-105 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-400">5.0</span>
+                        </div>
+                        <p class="mb-4" style="color: #F4E4C1;">"Best restaurant in the city! The wine selection is extraordinary and the sommelier's recommendations were perfect."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-r from-yellow-300 to-orange-400 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-white font-bold">RK</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Robert Kim</p>
+                                <p class="text-xs" style="color: #D2B48C;">1 month ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google Review Stats and Button -->
+                <div class="text-center">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="flex items-center">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%234285F4' d='M24 9.5c3.9 0 6.6 1.6 8.1 3l6-5.8C34.3 3.3 29.8 1 24 1 14.9 1 7.3 6.5 3.7 14.3l7 5.4C12.3 13.9 17.6 9.5 24 9.5z'/%3E%3Cpath fill='%23EA4335' d='M46.1 24.5c0-1.6-.1-2.7-.3-3.9H24v7.1h12.5c-.6 3-2.3 5.3-4.7 6.8l7.2 5.6C43.4 36.1 46.1 30.7 46.1 24.5z'/%3E%3Cpath fill='%23FBBC05' d='M10.7 28.7c-.5-1.6-.8-3.1-.8-4.7s.3-3.1.8-4.7l-7-5.4C2.6 16.5 2 20.1 2 24s.6 7.5 1.7 10.1l7-5.4z'/%3E%3Cpath fill='%2334A853' d='M24 47c5.8 0 10.7-1.9 14.2-5.2l-7.2-5.6c-1.9 1.3-4.4 2.1-7 2.1-5.4 0-10-3.7-11.6-8.7l-7 5.4C7.3 42.5 14.9 47 24 47z'/%3E%3C/svg%3E" alt="Google" class="w-8 h-8">
+                            <span class="ml-2 text-2xl font-bold">4.9</span>
+                            <div class="flex ml-2 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <span style="color: #D2B48C;">Based on 487 reviews</span>
+                    </div>
+                    
+                    <div>
+                        <button onclick="openGoogleReview()" class="inline-flex items-center px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" style="background: #F4E4C1; color: #2C1810;" onmouseover="this.style.background='#FFB347';" onmouseout="this.style.background='#F4E4C1';">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%234285F4' d='M24 9.5c3.9 0 6.6 1.6 8.1 3l6-5.8C34.3 3.3 29.8 1 24 1 14.9 1 7.3 6.5 3.7 14.3l7 5.4C12.3 13.9 17.6 9.5 24 9.5z'/%3E%3Cpath fill='%23EA4335' d='M46.1 24.5c0-1.6-.1-2.7-.3-3.9H24v7.1h12.5c-.6 3-2.3 5.3-4.7 6.8l7.2 5.6C43.4 36.1 46.1 30.7 46.1 24.5z'/%3E%3Cpath fill='%23FBBC05' d='M10.7 28.7c-.5-1.6-.8-3.1-.8-4.7s.3-3.1.8-4.7l-7-5.4C2.6 16.5 2 20.1 2 24s.6 7.5 1.7 10.1l7-5.4z'/%3E%3Cpath fill='%2334A853' d='M24 47c5.8 0 10.7-1.9 14.2-5.2l-7.2-5.6c-1.9 1.3-4.4 2.1-7 2.1-5.4 0-10-3.7-11.6-8.7l-7 5.4C7.3 42.5 14.9 47 24 47z'/%3E%3C/svg%3E" alt="Google" class="w-5 h-5 mr-2">
+                            Write a Review
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Menu Page -->
+    <div id="menu" class="page">
+        <section class="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-4 playfair gold-gradient">Our Menu</h2>
+            <p class="text-center mb-12" style="color: #D2B48C;">Discover our carefully curated selection</p>
+            
+            <!-- Menu Filter -->
+            <div class="flex justify-center mb-12">
+                <div class="glass rounded-full p-2 flex space-x-2">
+                    <button class="px-6 py-2 rounded-full font-semibold transition-all duration-300" style="background: #FFB347; color: #2C1810;">All</button>
+                    <button class="px-6 py-2 rounded-full transition-all duration-300" style="color: #F4E4C1;" onmouseover="this.style.background='#FFB347'; this.style.color='#2C1810';" onmouseout="this.style.background='transparent'; this.style.color='#F4E4C1';">Appetizers</button>
+                    <button class="px-6 py-2 rounded-full transition-all duration-300" style="color: #F4E4C1;" onmouseover="this.style.background='#FFB347'; this.style.color='#2C1810';" onmouseout="this.style.background='transparent'; this.style.color='#F4E4C1';">Mains</button>
+                    <button class="px-6 py-2 rounded-full transition-all duration-300" style="color: #F4E4C1;" onmouseover="this.style.background='#FFB347'; this.style.color='#2C1810';" onmouseout="this.style.background='transparent'; this.style.color='#F4E4C1';">Desserts</button>
+                    <button class="px-6 py-2 rounded-full transition-all duration-300" style="color: #F4E4C1;" onmouseover="this.style.background='#FFB347'; this.style.color='#2C1810';" onmouseout="this.style.background='transparent'; this.style.color='#F4E4C1';">Drinks</button>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Appetizers -->
+                <div class="menu-card rounded-lg p-6 animate-scale-in">
+                    <h3 class="text-2xl font-bold mb-4 playfair" style="color: #FFB347;">Appetizers</h3>
+                    <div class="space-y-4">
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Tiramisu</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">Traditional Italian dessert</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">$15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Starters Selection -->
+                <div class="menu-card rounded-lg p-6 animate-scale-in" style="animation-delay: 0.3s">
+                    <h3 class="text-2xl font-bold mb-4 playfair" style="color: #FFB347;">Starters Selection</h3>
+                    <div class="space-y-4">
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Château Margaux</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">2015 Bordeaux</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">$450</span>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Dom Pérignon</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">Vintage Champagne</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">$380</span>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Opus One</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">Napa Valley Blend</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">$320</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cocktails -->
+                <div class="menu-card rounded-lg p-6 animate-scale-in" style="animation-delay: 0.4s">
+                    <h3 class="text-2xl font-bold mb-4 playfair" style="color: #FFB347;">Signature Cocktails</h3>
+                    <div class="space-y-4">
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Golden Hour</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">Whiskey, honey, gold flakes</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">$18</span>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Midnight Rose</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">Gin, rose syrup, champagne</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">$16</span>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Savoria Special</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">Secret house blend</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">$20</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chef's Special -->
+                <div class="menu-card rounded-lg p-6 animate-scale-in" style="animation-delay: 0.5s">
+                    <h3 class="text-2xl font-bold mb-4 playfair" style="color: #FFB347;">Chef's Special</h3>
+                    <div class="space-y-4">
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Tasting Menu</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">7-course experience</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">$150</span>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Wine Pairing</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">Sommelier selection</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">+$75</span>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-semibold transition" style="color: #F4E4C1;" onmouseover="this.style.color='#FFB347';" onmouseout="this.style.color='#F4E4C1';">Seasonal Special</h4>
+                                    <p class="text-sm" style="color: #D2B48C;">Ask your server</p>
+                                </div>
+                                <span class="font-bold" style="color: #FFB347;">Market Price</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section class="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-4 playfair gold-gradient">Our Story</h2>
+            <p class="text-center mb-12" style="color: #D2B48C;">A legacy of culinary excellence since 1985</p>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="scroll-animate">
+                    <h3 class="text-3xl font-bold mb-4 playfair">A Tradition of Excellence</h3>
+                    <p class="mb-4" style="color: #F4E4C1;">
+                        For nearly four decades, Savoria has been the epitome of fine dining in the heart of the city. 
+                        Our journey began with a simple vision: to create an extraordinary dining experience that 
+                        combines exceptional cuisine with impeccable service.
+                    </p>
+                    <p class="mb-4" style="color: #F4E4C1;">
+                        Founded by Chef Alessandro Savori, our restaurant has evolved from a small family-owned 
+                        establishment to one of the most prestigious dining destinations in the region.
+                    </p>
+                    <p style="color: #F4E4C1;">
+                        Today, under the leadership of Chef yaaalif, we continue to push the boundaries 
+                        of culinary innovation while staying true to our roots.
+                    </p>
+                </div>
+                <div class="relative scroll-animate">
+                    <div class="rounded-lg h-64 md:h-96 flex items-center justify-center overflow-hidden" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                        <i class="fas fa-award text-8xl text-white animate-pulse-slow"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <div class="text-center scroll-animate">
+                    <h4 class="text-5xl font-bold mb-2 animate-float" style="color: #FFB347;">38</h4>
+                    <p style="color: #D2B48C;">Years of Excellence</p>
+                </div>
+                <div class="text-center scroll-animate" style="animation-delay: 0.2s">
+                    <h4 class="text-5xl font-bold mb-2 animate-float" style="color: #FFB347; animation-delay: 0.5s">15</h4>
+                    <p style="color: #D2B48C;">Michelin Stars</p>
+                </div>
+                <div class="text-center scroll-animate" style="animation-delay: 0.4s">
+                    <h4 class="text-5xl font-bold mb-2 animate-float" style="color: #FFB347; animation-delay: 1s">50K+</h4>
+                    <p style="color: #D2B48C;">Happy Guests</p>
+                </div>
+            </div>
+            
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-center mb-8 playfair">Meet Our Team</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center group scroll-animate">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fas fa-user text-4xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-1">mohammed </h4>
+                        <p style="color: #FFB347;">Executive Chef</p>
+                    </div>
+                    <div class="text-center group scroll-animate" style="animation-delay: 0.2s">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fas fa-user text-4xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-1">mohammed</h4>
+                        <p style="color: #FFB347;">Pastry Chef</p>
+                    </div>
+                    <div class="text-center group scroll-animate" style="animation-delay: 0.4s">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fas fa-user text-4xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-1">mohammed</h4>
+                        <p style="color: #FFB347;">Head manager</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <h3 class="text-3xl font-bold mb-8 playfair">Gallery</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="gallery-img h-48 rounded-lg relative group" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-search-plus text-3xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-img h-48 rounded-lg relative group" style="background: linear-gradient(to right, #D4AF37, #FFB347);">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-search-plus text-3xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-img h-48 rounded-lg relative group" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-search-plus text-3xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-img h-48 rounded-lg relative group" style="background: linear-gradient(to right, #D4AF37, #FFB347);">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-search-plus text-3xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Party Hall Page -->
+    <div id="party-hall" class="page">
+        <section class="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-4 playfair gold-gradient">Party Hall & Events</h2>
+            <p class="text-center mb-12" style="color: #D2B48C;">Create unforgettable memories in our elegant venues</p>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-20">
+                <div class="glass rounded-lg p-8 transform hover:scale-105 transition-all duration-300">
+                    <h3 class="text-3xl font-bold mb-4 playfair">Grand Ballroom</h3>
+                    <p class="mb-4" style="color: #F4E4C1;">
+                        Our magnificent Grand Ballroom can accommodate up to 500 guests, featuring crystal chandeliers, 
+                        state-of-the-art audiovisual equipment, and a dedicated dance floor.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check mr-2" style="color: #FFB347;"></i> Capacity: 500 guests</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2" style="color: #FFB347;"></i> Full catering service</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2" style="color: #FFB347;"></i> Professional event planning</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2" style="color: #FFB347;"></i> Customizable lighting</li>
+                    </ul>
+                    <p class="text-2xl font-bold" style="color: #FFB347;">Starting from $5,000</p>
+                </div>
+                <div class="glass rounded-lg p-8 transform hover:scale-105 transition-all duration-300">
+                    <h3 class="text-3xl font-bold mb-4 playfair">Intimate Garden Terrace</h3>
+                    <p class="mb-4" style="color: #F4E4C1;">
+                        Perfect for smaller gatherings, our Garden Terrace offers a romantic outdoor setting 
+                        with panoramic city views and lush greenery.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check mr-2" style="color: #FFB347;"></i> Capacity: 150 guests</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2" style="color: #FFB347;"></i> Open-air dining</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2" style="color: #FFB347;"></i> Retractable canopy</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2" style="color: #FFB347;"></i> Ambient lighting</li>
+                    </ul>
+                    <p class="text-2xl font-bold" style="color: #FFB347;">Starting from $2,500</p>
+                </div>
+            </div>
+            
+            <div class="glass-dark rounded-lg p-8 mb-20">
+                <h3 class="text-3xl font-bold text-center mb-8 playfair">Event Services</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fas fa-birthday-cake text-3xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Weddings</h4>
+                        <p class="text-sm" style="color: #D2B48C;">Make your special day unforgettable</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fas fa-briefcase text-3xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Corporate Events</h4>
+                        <p class="text-sm" style="color: #D2B48C;">Professional meetings & conferences</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fas fa-glass-cheers text-3xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Private Parties</h4>
+                        <p class="text-sm" style="color: #D2B48C;">Birthdays, anniversaries & more</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fas fa-graduation-cap text-3xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Social Events</h4>
+                        <p class="text-sm" style="color: #D2B48C;">Graduations, reunions & celebrations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rounded-lg p-8 text-center" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                <h3 class="text-3xl font-bold mb-4 playfair" style="color: #2C1810;">Book Your Event Now</h3>
+                <p class="mb-6" style="color: #2C1810;">Let us make your special occasion truly memorable</p>
+                <button onclick="bookPartyHall()" class="px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105" style="background: #2C1810; color: #F4E4C1;" onmouseover="this.style.background='#3C2415';" onmouseout="this.style.background='#2C1810';">
+                    <i class="fab fa-whatsapp mr-2"></i> Book via WhatsApp
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section class="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-4 playfair gold-gradient">Contact Us</h2>
+            <p class="text-center mb-12" style="color: #D2B48C;">We'd love to hear from you</p>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 playfair">Get in Touch</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-yellow-400 transition" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-yellow-400 transition" placeholder="your@email.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-yellow-400 transition" placeholder="your phone number" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-yellow-400 transition" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-gold w-full py-3 rounded-lg text-black font-semibold">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 playfair">Visit Us</h3>
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-yellow-400 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Address</h4>
+                                <p style="color: #D2B48C;">123 Gourmet Street<br>Culinary District, CD 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-yellow-400 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Hours</h4>
+                                <p style="color: #D2B48C;">Mon-Thu: 5:00 PM - 11:00 PM<br>Fri-Sun: 5:00 PM - 12:00 AM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-yellow-400 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone</h4>
+                                <p style="color: #D2B48C;">+91 7358616943</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-yellow-400 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p style="color: #D2B48C;">info@savoria.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-lg p-6">
+                        <h4 class="font-bold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                                <i class="fab fa-instagram text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                                <i class="fab fa-twitter text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                                <i class="fab fa-linkedin-in text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Google Reviews Widget -->
+                    <div class="glass rounded-lg p-6 mt-6">
+                        <h4 class="font-bold mb-4">Customer Reviews</h4>
+                        <div class="flex items-center mb-4">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%234285F4' d='M24 9.5c3.9 0 6.6 1.6 8.1 3l6-5.8C34.3 3.3 29.8 1 24 1 14.9 1 7.3 6.5 3.7 14.3l7 5.4C12.3 13.9 17.6 9.5 24 9.5z'/%3E%3Cpath fill='%23EA4335' d='M46.1 24.5c0-1.6-.1-2.7-.3-3.9H24v7.1h12.5c-.6 3-2.3 5.3-4.7 6.8l7.2 5.6C43.4 36.1 46.1 30.7 46.1 24.5z'/%3E%3Cpath fill='%23FBBC05' d='M10.7 28.7c-.5-1.6-.8-3.1-.8-4.7s.3-3.1.8-4.7l-7-5.4C2.6 16.5 2 20.1 2 24s.6 7.5 1.7 10.1l7-5.4z'/%3E%3Cpath fill='%2334A853' d='M24 47c5.8 0 10.7-1.9 14.2-5.2l-7.2-5.6c-1.9 1.3-4.4 2.1-7 2.1-5.4 0-10-3.7-11.6-8.7l-7 5.4C7.3 42.5 14.9 47 24 47z'/%3E%3C/svg%3E" alt="Google" class="w-8 h-8 mr-2">
+                            <div>
+                                <div class="flex items-center">
+                                    <span class="text-2xl font-bold mr-2">4.9</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                </div>
+                                <p class="text-sm" style="color: #D2B48C;">487 reviews</p>
+                            </div>
+                        </div>
+                        <button onclick="openGoogleReview()" class="w-full py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(to right, #FFB347, #D4AF37); color: #2C1810;" onmouseover="this.style.background='linear-gradient(to right, #D4AF37, #8B4513)';" onmouseout="this.style.background='linear-gradient(to right, #FFB347, #D4AF37)';">
+                            <i class="fas fa-pen mr-2"></i>Write a Review
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-dark mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Restaurant Info -->
+                <div class="md:col-span-2">
+                    <h3 class="text-3xl font-bold playfair gold-gradient mb-4">Yaa Alif Briyani</h3>
+                    <p class="mb-6" style="color: #F4E4C1;">
+                        Where Culinary Excellence Meets Elegance. Experience the finest dining and premium party hall services in the heart of the city.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fab fa-facebook-f text-white text-lg"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fab fa-instagram text-white text-lg"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fab fa-twitter text-white text-lg"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" style="background: linear-gradient(to right, #FFB347, #D4AF37);">
+                            <i class="fab fa-youtube text-white text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4 playfair" style="color: #FFB347;">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" onclick="showPage('home')" class="hover:text-yellow-300 transition-colors duration-300" style="color: #F4E4C1;">Home</a></li>
+                        <li><a href="#" onclick="showPage('menu')" class="hover:text-yellow-300 transition-colors duration-300" style="color: #F4E4C1;">Menu</a></li>
+                        <li><a href="#" onclick="showPage('about')" class="hover:text-yellow-300 transition-colors duration-300" style="color: #F4E4C1;">About Us</a></li>
+                        <li><a href="#" onclick="showPage('party-hall')" class="hover:text-yellow-300 transition-colors duration-300" style="color: #F4E4C1;">Party Hall</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="hover:text-yellow-300 transition-colors duration-300" style="color: #F4E4C1;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4 playfair" style="color: #FFB347;">Contact Info</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-yellow-400 mr-3 mt-1"></i>
+                            <p style="color: #F4E4C1;">123 Gourmet Street<br>Culinary District, CD 12345</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-yellow-400 mr-3"></i>
+                            <p style="color: #F4E4C1;">+91 7358616943</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-yellow-400 mr-3"></i>
+                            <p style="color: #F4E4C1;">info@yaaalif.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Opening Hours -->
+            <div class="glass rounded-lg p-6 mb-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-bold mb-4 playfair" style="color: #FFB347;">Restaurant Hours</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span style="color: #F4E4C1;">Monday - Thursday</span>
+                                <span style="color: #D2B48C;">5:00 PM - 11:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span style="color: #F4E4C1;">Friday - Sunday</span>
+                                <span style="color: #D2B48C;">5:00 PM - 12:00 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-4 playfair" style="color: #FFB347;">Party Hall Booking</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span style="color: #F4E4C1;">Available</span>
+                                <span style="color: #D2B48C;">24/7</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span style="color: #F4E4C1;">Advance Booking</span>
+                                <span style="color: #D2B48C;">Required</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Subscription -->
+            <div class="glass rounded-lg p-6 mb-8 text-center">
+                <h4 class="text-2xl font-bold mb-2 playfair" style="color: #FFB347;">Stay Updated</h4>
+                <p class="mb-4" style="color: #F4E4C1;">Subscribe to our newsletter for special offers and events</p>
+                <div class="flex max-w-md mx-auto">
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-l-lg focus:ring-2 focus:ring-yellow-400 transition" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 179, 71, 0.3); color: #F4E4C1;">
+                    <button class="px-6 py-3 rounded-r-lg font-semibold transition-all duration-300 hover:scale-105" style="background: linear-gradient(to right, #FFB347, #D4AF37); color: #2C1810;">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-600 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p style="color: #D2B48C;">&copy; 2024 Yaa Alif Briyani. All rights reserved.</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="hover:text-yellow-300 transition-colors duration-300" style="color: #D2B48C;">Privacy Policy</a>
+                        <a href="#" class="hover:text-yellow-300 transition-colors duration-300" style="color: #D2B48C;">Terms of Service</a>
+                        <a href="#" class="hover:text-yellow-300 transition-colors duration-300" style="color: #D2B48C;">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/15551234567?text=Hello%20Savoria,%20I%20would%20like%20to%20make%20a%20reservation" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
